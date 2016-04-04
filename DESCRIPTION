@@ -6,7 +6,9 @@ Date: 2015-10-06
 Author: David Blodgett
 Maintainer: David Blodgett <dblodgett@usgs.gov>
 Depends:
-    maptools, rgeos, sp
+    R (>= 3.0)
+Imports:
+    maptools, sp
 Suggests:
     testthat
 Description: This pacakge is used to aggregate HUC12 geospatial and time series data to total upstream watersheds.

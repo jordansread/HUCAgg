@@ -32,13 +32,3 @@ unionHUC<-function(huc,upstreamHUCs,hucPoly) {
   aggPoly<-unionSpatialPolygons(hucPolySub,hucPolySub@data$group)
   return(aggPoly)
 }
-
-load(system.file("extdata","testhucpoly.rda",package="HUCAgg"))
-plot(testhucPoly)
-hucList<-as.character(unlist(getHUCList("07",testhucPoly)))
-fromHUC<-sapply(hucList,fromHUC_finder,hucs=testhucPoly@data$HUC12,tohucs=testhucPoly@data$TOHUC)
-aggrHUCs<-sapply(hucList, HUC_aggregator, fromHUC=fromHUC)
-huc<-"070900020904"
-outhucPoly<-unionHUC(huc, aggrHUCs, testhucPoly)
-plot(outhucPoly, add=TRUE, col=rgb(1,0,0,.3))
- 
