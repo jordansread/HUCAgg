@@ -6,8 +6,6 @@ Date: 2015-10-06
 Author: David Blodgett
 Maintainer: David Blodgett <dblodgett@usgs.gov>
 Depends:
-    R (>= 3.0)
-Imports:
     maptools, sp, rgeos
 Suggests:
     testthat
