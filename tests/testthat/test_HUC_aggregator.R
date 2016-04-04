@@ -1,8 +1,7 @@
 context("Test HUC aggregator Function")
 
 test_that("Returned unioned polygons are correct.", {
-  # load(system.file("extdata","testhucpoly.rda",package="HUCAgg"))
-  load("data/testhucpoly.rda")
+  load(system.file("extdata","testhucpoly.rda",package="HUCAgg"))
   hucList<-testhucPoly@data$HUC12
   fromHUC<-sapply(hucList,fromHUC_finder,hucs=testhucPoly@data$HUC12,tohucs=testhucPoly@data$TOHUC)
   expected<-c(unlist(fromHUC["070900020604"][[1]]),
